@@ -231,18 +231,6 @@
   .cache-log .hit-text{ color:var(--accent-2); }
   .cache-log .miss-text{ color:var(--accent); }
 
-  /* agent trace demo */
-  .agent-demo{
-    background:var(--surface-2); border:1px solid var(--line); border-radius:10px;
-    padding:20px; margin:6px 0 20px; font-family:var(--mono); font-size:12.5px;
-  }
-  .agent-demo .row{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px; }
-  .agent-log{ color:var(--text-dim); min-height:80px; line-height:1.9; }
-  .agent-log .step{ opacity:0; transform:translateX(-6px); animation:stepIn .35s ease forwards; display:block; }
-  .agent-log .ok{ color:var(--accent-2); }
-  .agent-log .warn{ color:var(--accent); }
-  @keyframes stepIn{ to{ opacity:1; transform:translateX(0); } }
-
   /* ---------- SKILLS ---------- */
   .skill-groups{ display:grid; grid-template-columns:1fr 1fr; gap:28px 40px; }
   .skill-group h4{
@@ -300,12 +288,12 @@
 <div class="wrap" id="top">
 
   <header class="hero">
-    <div class="eyebrow"><span class="dot"></span> AVAILABLE FOR SOFTWARE DEVELOPER &amp; AI/ML ROLES</div>
-    <h1>Preeti Yadav<br><span class="line2">builds systems from the wire protocol up — model included.</span></h1>
+    <div class="eyebrow"><span class="dot"></span> AVAILABLE FOR SOFTWARE DEVELOPER ROLES</div>
+    <h1>Preeti Yadav<br><span class="line2">builds systems from the wire protocol up.</span></h1>
     <p class="hero-sub">
       Computer Science undergrad at <strong>VIT Chennai</strong>, selected for Infosys via <strong>HackWithInfy</strong>.
       I like opening the hood on the things most apps import in one line — database clients,
-      connection pools, retrieval pipelines — and building them myself to understand what's really there.
+      connection pools, consensus — and building them myself to understand what's really there.
     </p>
 
     <div class="term">
@@ -329,12 +317,11 @@
           I keep taking that call apart: a <strong>Redis client built straight from the wire protocol</strong>,
           a <strong>3-node distributed key-value store</strong> with real sharding and replication, a
           <strong>semantic search service</strong> with its own cache layer — no mocked networking, no shortcuts.</p>
-        <p>I take the same approach to AI systems — an <strong>autonomous research agent</strong> with a self-critique
-          pass and a measured groundedness rate, not just a one-shot RAG demo. Alongside that, three internships
-          shipping production-facing pipelines and APIs — from a blood-pressure estimation pipeline to an
-          LLM-powered report generation pipeline — working with engineering teams in Agile, fast-paced settings.</p>
-        <p>I'm looking for a Software Developer or AI/ML Engineer role where I can keep building scalable,
-          intelligent systems for mission-critical, enterprise-scale products.</p>
+        <p>Alongside that, I've spent three internships shipping production-facing pipelines and APIs —
+          from a blood-pressure estimation pipeline to an automated G3 sustainability-report generator —
+          working with engineering teams in Agile, fast-paced settings.</p>
+        <p>I'm looking for a Software Developer role where I can keep building scalable, reliable systems
+          for mission-critical, enterprise-scale products.</p>
       </div>
       <ul class="fact-list">
         <li><span>Based in</span><span>Lucknow, India</span></li>
@@ -355,25 +342,23 @@
       <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="tl-role">
-          <h3>AI Intern <span class="org">· Prutech</span></h3>
-          <span class="tl-date">May 2026 — Jul 2026</span>
+          <h3>AI/ML Intern <span class="org">· SenseSemi</span></h3>
+          <span class="tl-date">Jun 2026 — Present</span>
         </div>
-        <p>Contributed across the full software development lifecycle — REST API endpoints (FastAPI) for a
-          data-validation engine (16+ rules across 6 templates) and an AI-native, LLM-powered report generation
-          pipeline feeding a multi-stage human approval workflow (submit → admin/QP approve or reject), backed
-          by role-based access control. Implemented background job processing with threading and Server-Sent
-          Events for real-time progress on long-running AI generation tasks.</p>
+        <p>Building a signal-processing pipeline to estimate blood pressure from physiological data —
+          modular, testable Python for preprocessing and feature engineering, built in a fast-paced,
+          cross-functional team using Git-based version control.</p>
       </div>
 
       <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="tl-role">
-          <h3>AI/ML Intern <span class="org">· SenseSemi</span></h3>
-          <span class="tl-date">Jun 2026 — Jul 2026</span>
+          <h3>AI Intern <span class="org">· Prutech</span></h3>
+          <span class="tl-date">Jun 2026 — Present</span>
         </div>
-        <p>Built a signal-processing and machine learning pipeline to estimate blood pressure from
-          physiological data (ECG + PPG) — modular, testable Python for preprocessing and feature engineering,
-          built in a fast-paced, cross-functional team using Git-based version control.</p>
+        <p>Designing an automated data-extraction and templating pipeline that converts operational
+          data into standardized G3 sustainability reports for mining-sector clients — cutting manual
+          compilation effort with clean, maintainable code.</p>
       </div>
 
       <div class="tl-item">
@@ -485,32 +470,6 @@
         <a href="https://github.com/preeti20-27/-semantic-search-system" target="_blank" rel="noopener">source →</a>
       </div>
     </div>
-    <!-- Project 4: DeepDesk -->
-    <div class="project reveal">
-      <div class="project-head">
-        <h3>DeepDesk — Autonomous Research Agent</h3>
-        <div class="stack">
-          <span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">Streamlit</span><span class="chip">ChromaDB</span><span class="chip">LLM APIs</span>
-        </div>
-      </div>
-      <p class="desc">An agentic RAG system that plans its own multi-hop investigation, calls tools, then runs a
-        separate self-critique pass to catch unsupported claims before answering — re-researching automatically
-        if it finds gaps. Send a query below to see the agent's trace.</p>
-
-      <div class="agent-demo" id="agentDemo">
-        <div class="row">
-          <button class="key-btn" data-trace="revenue">"Compare Q3 revenue growth"</button>
-          <button class="key-btn" data-trace="conflict">"Any conflicting margin reports?"</button>
-          <button class="key-btn" data-trace="gap">"What's the 5-year outlook?"</button>
-        </div>
-        <div class="agent-log" id="agentLog">↑ send a query to see the agent's trace</div>
-      </div>
-
-      <div class="project-links">
-        <a href="https://github.com/preeti20-27/deepdesk-agent" target="_blank" rel="noopener">source →</a>
-      </div>
-    </div>
-
   </section>
 
   <!-- SKILLS -->
@@ -531,13 +490,6 @@
         </div>
       </div>
       <div class="skill-group">
-        <h4>AI / ML</h4>
-        <div class="skill-chips">
-          <span>LLM APIs</span><span>Agentic Pipelines</span><span>FAISS</span><span>ChromaDB</span>
-          <span>CNNs</span><span>Transformers</span><span>TensorFlow</span><span>Scikit-learn</span>
-        </div>
-      </div>
-      <div class="skill-group">
         <h4>Software Engineering</h4>
         <div class="skill-chips">
           <span>Git / GitHub</span><span>GitHub Actions</span><span>Docker</span><span>Linux</span>
@@ -546,7 +498,7 @@
       <div class="skill-group">
         <h4>Tools &amp; Frameworks</h4>
         <div class="skill-chips">
-          <span>FastAPI</span><span>Streamlit</span><span>REST APIs</span><span>AWS</span><span>Pandas</span><span>NumPy</span>
+          <span>FastAPI</span><span>REST APIs</span><span>AWS</span><span>Pandas</span><span>NumPy</span>
         </div>
       </div>
     </div>
@@ -570,7 +522,7 @@
 <footer id="contact">
   <div class="wrap">
     <h2>Let's build something.</h2>
-    <p>Open to Software Developer and AI/ML Engineer roles — happiest working close to the systems layer.</p>
+    <p>Open to Software Developer roles — happiest working close to the systems layer.</p>
     <div class="contact-links">
       <a class="btn primary" href="mailto:preetiyadav000001@gmail.com">preetiyadav000001@gmail.com</a>
       <a class="btn" href="tel:+918924803416">+91 8924803416</a>
@@ -594,7 +546,7 @@
 
   // typing effect
   const typedEl = document.getElementById('typedLine');
-  const fullText = "Preeti Yadav — backend, distributed systems & AI/ML";
+  const fullText = "Preeti Yadav — backend & distributed systems";
   let i = 0;
   function typeChar(){
     if(i <= fullText.length){
@@ -672,43 +624,6 @@
       keyDot.style.display = 'block';
       const owner = nearestNode(angle);
       ringResult.innerHTML = `<span class="node-owns" style="color:${owner.color}">${owner.name}</span> owns "${key}" <span style="color:#555">(range ${owner.range})</span>`;
-    });
-  });
-
-  // DeepDesk agent trace demo
-  const agentTraces = {
-    revenue: [
-      "→ tool_call: retrieve_docs(\"Q3 revenue\") — 2 filings found",
-      "→ tool_call: calculator(growth_delta%)",
-      "→ self-critique: draft checked against evidence — fully supported",
-      "<span class=\"ok\">✓ grounded — report returned</span>"
-    ],
-    conflict: [
-      "→ tool_call: retrieve_docs(\"operating margin\") — 3 sources found",
-      "→ self-critique: sources disagree on margin trend",
-      "<span class=\"warn\">→ instructed to surface disagreement, not silently pick one</span>",
-      "<span class=\"ok\">✓ grounded — conflict noted in report</span>"
-    ],
-    gap: [
-      "→ tool_call: retrieve_docs(\"5-year outlook\") — 1 source found",
-      "<span class=\"warn\">→ self-critique: outlook claim not backed by retrieved evidence</span>",
-      "→ triggering additional retrieval + revision pass",
-      "<span class=\"ok\">✓ grounded — report returned after 2nd pass</span>"
-    ]
-  };
-  const agentLog = document.getElementById('agentLog');
-  document.querySelectorAll('.agent-demo .key-btn').forEach(btn=>{
-    btn.addEventListener('click', ()=>{
-      const steps = agentTraces[btn.getAttribute('data-trace')];
-      agentLog.innerHTML = '';
-      steps.forEach((s, idx)=>{
-        setTimeout(()=>{
-          const line = document.createElement('span');
-          line.className = 'step';
-          line.innerHTML = s;
-          agentLog.appendChild(line);
-        }, idx * 420);
-      });
     });
   });
 
