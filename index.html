@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Preeti Yadav — Software Developer</title>
+<title>Preeti Yadav — Data, Analytics &amp; AI/ML</title>
+<meta name="description" content="Preeti Yadav — CS (AI &amp; ML) undergrad at VIT Chennai. Data pipelines, validation, Power BI/Tableau dashboards and applied ML.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -231,6 +232,18 @@
   .cache-log .hit-text{ color:var(--accent-2); }
   .cache-log .miss-text{ color:var(--accent); }
 
+  /* agent trace demo */
+  .agent-demo{
+    background:var(--surface-2); border:1px solid var(--line); border-radius:10px;
+    padding:20px; margin:6px 0 20px; font-family:var(--mono); font-size:12.5px;
+  }
+  .agent-demo .row{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px; }
+  .agent-log{ color:var(--text-dim); min-height:80px; line-height:1.9; }
+  .agent-log .step{ opacity:0; transform:translateX(-6px); animation:stepIn .35s ease forwards; display:block; }
+  .agent-log .ok{ color:var(--accent-2); }
+  .agent-log .warn{ color:var(--accent); }
+  @keyframes stepIn{ to{ opacity:1; transform:translateX(0); } }
+
   /* ---------- SKILLS ---------- */
   .skill-groups{ display:grid; grid-template-columns:1fr 1fr; gap:28px 40px; }
   .skill-group h4{
@@ -268,6 +281,29 @@
     header.hero{ padding:132px 0 70px; }
     section{ padding:64px 0; }
   }
+
+  /* data-quality demo */
+  .data-demo{
+    background:var(--surface-2); border:1px solid var(--line); border-radius:10px;
+    padding:20px; margin:6px 0 20px; font-family:var(--mono); font-size:12.5px;
+  }
+  .data-demo .row{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px; }
+  .dq-log{ color:var(--text-dim); min-height:44px; line-height:1.8; }
+  .dq-log .ok{ color:var(--accent-2); }
+  .dq-log .warn{ color:var(--accent); }
+
+  /* metrics + pipeline rows */
+  .metric-row{ display:flex; gap:14px; flex-wrap:wrap; margin:6px 0 20px; }
+  .metric{
+    flex:1; min-width:170px; background:var(--surface-2); border:1px solid var(--line);
+    border-radius:10px; padding:16px 18px; font-family:var(--mono);
+  }
+  .metric b{ display:block; color:var(--accent); font-size:22px; font-weight:700; }
+  .metric span{ color:var(--text-dim); font-size:12px; }
+  .pipeline{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin:6px 0 20px; font-family:var(--mono); font-size:12.5px; }
+  .pipe-step{ background:var(--surface-2); border:1px solid var(--line); border-radius:8px; padding:9px 14px; color:var(--text); }
+  .pipe-arrow{ color:var(--text-dim); }
+  .tag-wip{ font-family:var(--mono); font-size:11px; color:var(--accent); border:1px solid var(--accent); border-radius:20px; padding:2px 9px; margin-left:8px; vertical-align:middle; font-weight:500; }
 </style>
 </head>
 <body>
@@ -288,12 +324,12 @@
 <div class="wrap" id="top">
 
   <header class="hero">
-    <div class="eyebrow"><span class="dot"></span> AVAILABLE FOR SOFTWARE DEVELOPER ROLES</div>
-    <h1>Preeti Yadav<br><span class="line2">builds systems from the wire protocol up.</span></h1>
+    <div class="eyebrow"><span class="dot"></span> AVAILABLE FOR DATA, ANALYTICS &amp; AI/ML INTERNSHIPS</div>
+    <h1>Preeti Yadav<br><span class="line2">turns messy data into decisions — pipelines, dashboards, models.</span></h1>
     <p class="hero-sub">
       Computer Science undergrad at <strong>VIT Chennai</strong>, selected for Infosys via <strong>HackWithInfy</strong>.
-      I like opening the hood on the things most apps import in one line — database clients,
-      connection pools, consensus — and building them myself to understand what's really there.
+      I build the parts that make data trustworthy — validation rules, pipelines, BI dashboards —
+      and the ML models that sit on top, then ship them where teams can actually use them.
     </p>
 
     <div class="term">
@@ -313,22 +349,25 @@
     <div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title">about</h2><div class="sec-line"></div></div>
     <div class="about-grid reveal">
       <div>
-        <p>Most CRUD projects hide the interesting part of a system behind a single library call.
-          I keep taking that call apart: a <strong>Redis client built straight from the wire protocol</strong>,
-          a <strong>3-node distributed key-value store</strong> with real sharding and replication, a
-          <strong>semantic search service</strong> with its own cache layer — no mocked networking, no shortcuts.</p>
-        <p>Alongside that, I've spent three internships shipping production-facing pipelines and APIs —
-          from a blood-pressure estimation pipeline to an automated G3 sustainability-report generator —
-          working with engineering teams in Agile, fast-paced settings.</p>
-        <p>I'm looking for a Software Developer role where I can keep building scalable, reliable systems
-          for mission-critical, enterprise-scale products.</p>
+        <p>Most data projects stop at a notebook. I care about what comes before and after it:
+          <strong>validation engines</strong> that catch bad inputs (16+ rules across 6 templates at Prutech),
+          <strong>data pipelines</strong> that reconcile conflicting sources (NSE bhavcopy vs yfinance for an
+          asset-allocation study), and <strong>Power BI and Tableau dashboards</strong> that turn the results
+          into something stakeholders can act on.</p>
+        <p>On the ML side: a <strong>blood-pressure estimation pipeline</strong> from ECG and PPG signals, a CNN
+          tuned with Bayesian optimization, a BERT emotion classifier, and a semantic search service over 20,000
+          documents. Right now I'm a <strong>Forward Deployed Engineer at Facto</strong>, gathering requirements
+          directly from manufacturing clients and building the products they need.</p>
+        <p>I'm looking for a data, analytics or AI/ML role where I can keep turning raw data into reliable
+          decisions — in a cross-functional, Agile team.</p>
       </div>
       <ul class="fact-list">
         <li><span>Based in</span><span>Lucknow, India</span></li>
         <li><span>Studying</span><span>B.Tech CS, VIT Chennai</span></li>
         <li><span>Graduating</span><span>2027</span></li>
         <li><span>CGPA</span><span>8.66</span></li>
-        <li><span>DSA solved</span><span>100+ LeetCode</span></li>
+        <li><span>DSA solved</span><span>150+ LeetCode</span></li>
+        <li><span>Certified</span><span>Google Associate Cloud Engineer</span></li>
         <li><span>Recognition</span><span>HackWithInfy, Infosys</span></li>
       </ul>
     </div>
@@ -342,23 +381,36 @@
       <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="tl-role">
-          <h3>AI/ML Intern <span class="org">· SenseSemi</span></h3>
-          <span class="tl-date">Jun 2026 — Present</span>
+          <h3>Forward Deployed Engineer Intern <span class="org">· Facto</span></h3>
+          <span class="tl-date">Sep 2026 — Present</span>
         </div>
-        <p>Building a signal-processing pipeline to estimate blood pressure from physiological data —
-          modular, testable Python for preprocessing and feature engineering, built in a fast-paced,
-          cross-functional team using Git-based version control.</p>
+        <p>Work directly with manufacturing clients — Bright Metals, KMT and Shera — to gather requirements
+          and build the products they need.</p>
       </div>
 
       <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="tl-role">
           <h3>AI Intern <span class="org">· Prutech</span></h3>
-          <span class="tl-date">Jun 2026 — Present</span>
+          <span class="tl-date">May 2026 — Jul 2026</span>
         </div>
-        <p>Designing an automated data-extraction and templating pipeline that converts operational
-          data into standardized G3 sustainability reports for mining-sector clients — cutting manual
-          compilation effort with clean, maintainable code.</p>
+        <p>Turned stakeholder requirements into a data-validation engine (16+ rules across 6 templates) with
+          statistical checks and automated resource estimation for data quality and QC. Ran exploratory data
+          analysis and statistical modeling for actionable insights, and built Power BI and Tableau dashboards
+          for MIS reporting and business storytelling. Also built an LLM-powered report generation pipeline with
+          a multi-stage human approval workflow (submit → admin/QP approve or reject), role-based access control
+          and FastAPI REST endpoints, with background jobs and Server-Sent Events for real-time progress.</p>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-role">
+          <h3>AI/ML Intern <span class="org">· SenseSemi</span></h3>
+          <span class="tl-date">Jun 2026 — Jul 2026</span>
+        </div>
+        <p>Built a signal-processing and regression-based ML pipeline to estimate blood pressure from
+          physiological data (ECG + PPG) — exploratory analysis, feature engineering and statistical modeling in
+          modular, testable Python, in a fast-paced, cross-functional Agile team.</p>
       </div>
 
       <div class="tl-item">
@@ -379,33 +431,120 @@
   <section id="projects">
     <div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title">projects</h2><div class="sec-line"></div></div>
 
-    <!-- Project 1: DB Client SDK -->
+    <!-- Data project: asset allocation -->
     <div class="project reveal">
       <div class="project-head">
-        <h3>Java Database Client SDK</h3>
+        <h3>Intelligent Asset Allocation Framework <span class="tag-wip">in progress</span></h3>
         <div class="stack">
-          <span class="chip">Java</span><span class="chip">TCP Sockets</span><span class="chip">Concurrency</span><span class="chip">Maven</span>
+          <span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">Parquet</span><span class="chip">Backtesting</span>
         </div>
       </div>
-      <p class="desc">A Redis client SDK built from the RESP wire protocol up — no Jedis, no Lettuce.
-        Written to understand what a database SDK team actually owns: framing, pooling, and retries —
-        hover each layer below.</p>
+      <p class="desc">Phase 1 of a portfolio-allocation research project over a 12-ticker multi-asset Indian
+        universe (NSE equities, gold and gilt ETFs). My part is the data pipeline and backtest foundation —
+        and making the data trustworthy. Click a check to see what validation found.</p>
 
-      <div class="stack-diagram" id="stackDiagram">
-        <div class="stack-layer" data-desc="Public, builder-configured entry point — set / get / delete / exists."><span class="tag">DbClient</span><span class="desc-inline">public API</span></div>
-        <div class="stack-arrow">↓</div>
-        <div class="stack-layer" data-desc="Exponential backoff + jitter — retries transient I/O failures only, never a real server error."><span class="tag">RetryPolicy</span><span class="desc-inline">backoff + jitter</span></div>
-        <div class="stack-arrow">↓</div>
-        <div class="stack-layer" data-desc="Bounded, blocking pool. Borrowing waits rather than opening unlimited sockets under load."><span class="tag">ConnectionPool</span><span class="desc-inline">bounded, blocking</span></div>
-        <div class="stack-arrow">↓</div>
-        <div class="stack-layer" data-desc="One TCP socket per connection — deliberately not thread-safe; the pool makes it safe."><span class="tag">Connection</span><span class="desc-inline">1 socket, RESP framing</span></div>
-        <div class="stack-arrow">↓</div>
-        <div class="stack-layer" data-desc="Encodes commands as RESP arrays, decodes all 5 reply types per the protocol spec."><span class="tag">RespCodec</span><span class="desc-inline">encode / decode RESP</span></div>
+      <div class="data-demo">
+        <div class="row">
+          <button class="key-btn" data-dq="corp">corporate actions</button>
+          <button class="key-btn" data-dq="quote">quote basis</button>
+          <button class="key-btn" data-dq="split">split history</button>
+          <button class="key-btn" data-dq="liq">liquidity</button>
+          <button class="key-btn" data-dq="gap">known gaps</button>
+        </div>
+        <div class="dq-log" id="dqLog">↑ pick a check — bhavcopy vs yfinance, 12 tickers</div>
       </div>
-      <div class="ring-controls result" id="layerDesc">↑ hover a layer to see what it owns</div>
 
       <div class="project-links">
-        <a href="https://github.com/preeti20-27/dbclient-sdk" target="_blank" rel="noopener">source →</a>
+        <a href="https://github.com/preeti20-27/Intelligent-asset-allocation-framework" target="_blank" rel="noopener">source →</a>
+      </div>
+    </div>
+
+    <!-- ML project: waste classification -->
+    <div class="project reveal">
+      <div class="project-head">
+        <h3>Waste Classification — CNN &amp; Bayesian Optimization</h3>
+        <div class="stack">
+          <span class="chip">Python</span><span class="chip">PyTorch</span><span class="chip">Optuna</span><span class="chip">Scikit-learn</span>
+        </div>
+      </div>
+      <p class="desc">A custom CNN for multi-class waste-image classification. Augmentation (rotations, flips,
+        affine transforms, colour jitter) and class weighting correct for class imbalance; learning rate, batch
+        size, dropout, filter count and optimizer are tuned with Bayesian optimization across multiple trials.</p>
+
+      <div class="metric-row">
+        <div class="metric"><b>86.87%</b><span>training accuracy at epoch 10</span></div>
+        <div class="metric"><b>5 knobs</b><span>tuned with Optuna: lr, batch, dropout, filters, optimizer</span></div>
+        <div class="metric"><b>6 metrics</b><span>accuracy · precision · recall · F1 · confusion matrix · ROC</span></div>
+      </div>
+    </div>
+
+    <!-- NLP project: EmojiBERT -->
+    <div class="project reveal">
+      <div class="project-head">
+        <h3>Emotion Detection from Text — EmojiBERT</h3>
+        <div class="stack">
+          <span class="chip">Python</span><span class="chip">HuggingFace</span><span class="chip">PyTorch</span><span class="chip">NLP</span>
+        </div>
+      </div>
+      <p class="desc">A BERT-based pipeline that classifies emotions in short, informal text — tweets, captions,
+        comments. A dedicated cleaning stage handles emojis, malformed Unicode and slang (ftfy, emoji, pandas),
+        and the pipeline is structured for reuse and future continual-learning updates.</p>
+
+      <div class="pipeline">
+        <span class="pipe-step">cleaning</span><span class="pipe-arrow">→</span>
+        <span class="pipe-step">tokenization</span><span class="pipe-arrow">→</span>
+        <span class="pipe-step">fine-tuning</span><span class="pipe-arrow">→</span>
+        <span class="pipe-step">logging</span>
+      </div>
+    </div>
+
+    <!-- Project 3: semantic search -->
+    <div class="project reveal">
+      <div class="project-head">
+        <h3>Semantic Search Service</h3>
+        <div class="stack">
+          <span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">FAISS</span><span class="chip">Docker</span>
+        </div>
+      </div>
+      <p class="desc">A semantic search API over 20,000 documents with a custom cluster-aware cache —
+        similar queries are served from cache instead of re-running the vector search. Try repeating a query below.</p>
+
+      <div class="cache-demo">
+        <div class="row">
+          <button class="key-btn" data-q="space shuttle launch">"space shuttle launch"</button>
+          <button class="key-btn" data-q="graphics card benchmark">"graphics card benchmark"</button>
+          <button class="key-btn" data-q="baseball trade rumors">"baseball trade rumors"</button>
+        </div>
+        <div class="cache-log" id="cacheLog">↑ send a query, then send it again</div>
+      </div>
+
+      <div class="project-links">
+        <a href="https://github.com/preeti20-27/-semantic-search-system" target="_blank" rel="noopener">source →</a>
+      </div>
+    </div>
+    <!-- Project 4: DeepDesk -->
+    <div class="project reveal">
+      <div class="project-head">
+        <h3>DeepDesk — Autonomous Research Agent</h3>
+        <div class="stack">
+          <span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">Streamlit</span><span class="chip">ChromaDB</span><span class="chip">LLM APIs</span>
+        </div>
+      </div>
+      <p class="desc">An agentic RAG system that plans its own multi-hop investigation, calls tools, then runs a
+        separate self-critique pass to catch unsupported claims before answering — re-researching automatically
+        if it finds gaps. Send a query below to see the agent's trace.</p>
+
+      <div class="agent-demo" id="agentDemo">
+        <div class="row">
+          <button class="key-btn" data-trace="revenue">"Compare Q3 revenue growth"</button>
+          <button class="key-btn" data-trace="conflict">"Any conflicting margin reports?"</button>
+          <button class="key-btn" data-trace="gap">"What's the 5-year outlook?"</button>
+        </div>
+        <div class="agent-log" id="agentLog">↑ send a query to see the agent's trace</div>
+      </div>
+
+      <div class="project-links">
+        <a href="https://github.com/preeti20-27/deepdesk-agent" target="_blank" rel="noopener">source →</a>
       </div>
     </div>
 
@@ -446,30 +585,36 @@
       </div>
     </div>
 
-    <!-- Project 3: semantic search -->
+    <!-- Project 1: DB Client SDK -->
     <div class="project reveal">
       <div class="project-head">
-        <h3>Semantic Search Service</h3>
+        <h3>Java Database Client SDK</h3>
         <div class="stack">
-          <span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">FAISS</span><span class="chip">Docker</span>
+          <span class="chip">Java</span><span class="chip">TCP Sockets</span><span class="chip">Concurrency</span><span class="chip">Maven</span>
         </div>
       </div>
-      <p class="desc">A semantic search API over 20,000 documents with a custom cluster-aware cache —
-        similar queries are served from cache instead of re-running the vector search. Try repeating a query below.</p>
+      <p class="desc">A Redis client SDK built from the RESP wire protocol up — no Jedis, no Lettuce.
+        Written to understand what a database SDK team actually owns: framing, pooling, and retries —
+        hover each layer below.</p>
 
-      <div class="cache-demo">
-        <div class="row">
-          <button class="key-btn" data-q="space shuttle launch">"space shuttle launch"</button>
-          <button class="key-btn" data-q="graphics card benchmark">"graphics card benchmark"</button>
-          <button class="key-btn" data-q="baseball trade rumors">"baseball trade rumors"</button>
-        </div>
-        <div class="cache-log" id="cacheLog">↑ send a query, then send it again</div>
+      <div class="stack-diagram" id="stackDiagram">
+        <div class="stack-layer" data-desc="Public, builder-configured entry point — set / get / delete / exists."><span class="tag">DbClient</span><span class="desc-inline">public API</span></div>
+        <div class="stack-arrow">↓</div>
+        <div class="stack-layer" data-desc="Exponential backoff + jitter — retries transient I/O failures only, never a real server error."><span class="tag">RetryPolicy</span><span class="desc-inline">backoff + jitter</span></div>
+        <div class="stack-arrow">↓</div>
+        <div class="stack-layer" data-desc="Bounded, blocking pool. Borrowing waits rather than opening unlimited sockets under load."><span class="tag">ConnectionPool</span><span class="desc-inline">bounded, blocking</span></div>
+        <div class="stack-arrow">↓</div>
+        <div class="stack-layer" data-desc="One TCP socket per connection — deliberately not thread-safe; the pool makes it safe."><span class="tag">Connection</span><span class="desc-inline">1 socket, RESP framing</span></div>
+        <div class="stack-arrow">↓</div>
+        <div class="stack-layer" data-desc="Encodes commands as RESP arrays, decodes all 5 reply types per the protocol spec."><span class="tag">RespCodec</span><span class="desc-inline">encode / decode RESP</span></div>
       </div>
+      <div class="ring-controls result" id="layerDesc">↑ hover a layer to see what it owns</div>
 
       <div class="project-links">
-        <a href="https://github.com/preeti20-27/-semantic-search-system" target="_blank" rel="noopener">source →</a>
+        <a href="https://github.com/preeti20-27/dbclient-sdk" target="_blank" rel="noopener">source →</a>
       </div>
     </div>
+
   </section>
 
   <!-- SKILLS -->
@@ -477,28 +622,43 @@
     <div class="sec-head"><span class="sec-num">04</span><h2 class="sec-title">skills</h2><div class="sec-line"></div></div>
     <div class="skill-groups reveal">
       <div class="skill-group">
-        <h4>Languages</h4>
+        <h4>Data &amp; Analytics</h4>
         <div class="skill-chips">
-          <span>Java</span><span>Python</span><span>C++</span><span>C</span><span>SQL</span><span>R</span>
+          <span>Python</span><span>SQL</span><span>R</span><span>Pandas</span><span>NumPy</span>
+          <span>EDA</span><span>Statistical Modeling</span><span>Data Validation</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>BI &amp; Visualization</h4>
+        <div class="skill-chips">
+          <span>Power BI</span><span>Tableau</span><span>MIS Reporting</span><span>Dashboarding</span><span>Business Storytelling</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>AI / ML</h4>
+        <div class="skill-chips">
+          <span>PyTorch</span><span>TensorFlow</span><span>Scikit-learn</span><span>CNNs</span><span>Transformers / BERT</span>
+          <span>Optuna</span><span>LLM APIs</span><span>RAG</span><span>FAISS</span><span>ChromaDB</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Cloud</h4>
+        <div class="skill-chips">
+          <span>Google Cloud (Associate Cloud Engineer)</span><span>AWS</span><span>Azure</span><span>Docker</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Software Engineering</h4>
+        <div class="skill-chips">
+          <span>Java</span><span>C++</span><span>C</span><span>FastAPI</span><span>Streamlit</span><span>REST APIs</span>
+          <span>Git / GitHub</span><span>GitHub Actions</span><span>Linux</span><span>Agile</span>
         </div>
       </div>
       <div class="skill-group">
         <h4>Core / Systems</h4>
         <div class="skill-chips">
           <span>Distributed Systems</span><span>Consistent Hashing</span><span>WAL / Durability</span>
-          <span>Design Patterns</span><span>TCP / Sockets</span><span>Concurrency</span><span>System Design</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <h4>Software Engineering</h4>
-        <div class="skill-chips">
-          <span>Git / GitHub</span><span>GitHub Actions</span><span>Docker</span><span>Linux</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <h4>Tools &amp; Frameworks</h4>
-        <div class="skill-chips">
-          <span>FastAPI</span><span>REST APIs</span><span>AWS</span><span>Pandas</span><span>NumPy</span>
+          <span>TCP / Sockets</span><span>Concurrency</span><span>System Design</span>
         </div>
       </div>
     </div>
@@ -511,7 +671,7 @@
       <div>
         <h3>B.Tech, Computer Science (AI &amp; Machine Learning)</h3>
         <div class="meta">VIT, Chennai &nbsp;·&nbsp; 2023 – 2027</div>
-        <div class="meta" style="margin-top:8px;">DSA · OOP · DBMS · Operating Systems · Computer Networks · System Design</div>
+        <div class="meta" style="margin-top:8px;">Machine Learning · Deep Learning · DSA · OOP · DBMS · Operating Systems · Computer Networks · System Design</div>
       </div>
       <div class="cgpa">8.66<small>CGPA</small></div>
     </div>
@@ -522,7 +682,7 @@
 <footer id="contact">
   <div class="wrap">
     <h2>Let's build something.</h2>
-    <p>Open to Software Developer roles — happiest working close to the systems layer.</p>
+    <p>Open to data, analytics and AI/ML roles — happiest where raw data meets a real decision.</p>
     <div class="contact-links">
       <a class="btn primary" href="mailto:preetiyadav000001@gmail.com">preetiyadav000001@gmail.com</a>
       <a class="btn" href="tel:+918924803416">+91 8924803416</a>
@@ -546,7 +706,7 @@
 
   // typing effect
   const typedEl = document.getElementById('typedLine');
-  const fullText = "Preeti Yadav — backend & distributed systems";
+  const fullText = "Preeti Yadav — data analytics, AI/ML & software";
   let i = 0;
   function typeChar(){
     if(i <= fullText.length){
@@ -624,6 +784,59 @@
       keyDot.style.display = 'block';
       const owner = nearestNode(angle);
       ringResult.innerHTML = `<span class="node-owns" style="color:${owner.color}">${owner.name}</span> owns "${key}" <span style="color:#555">(range ${owner.range})</span>`;
+    });
+  });
+
+  // DeepDesk agent trace demo
+  const agentTraces = {
+    revenue: [
+      "→ tool_call: retrieve_docs(\"Q3 revenue\") — 2 filings found",
+      "→ tool_call: calculator(growth_delta%)",
+      "→ self-critique: draft checked against evidence — fully supported",
+      "<span class=\"ok\">✓ grounded — report returned</span>"
+    ],
+    conflict: [
+      "→ tool_call: retrieve_docs(\"operating margin\") — 3 sources found",
+      "→ self-critique: sources disagree on margin trend",
+      "<span class=\"warn\">→ instructed to surface disagreement, not silently pick one</span>",
+      "<span class=\"ok\">✓ grounded — conflict noted in report</span>"
+    ],
+    gap: [
+      "→ tool_call: retrieve_docs(\"5-year outlook\") — 1 source found",
+      "<span class=\"warn\">→ self-critique: outlook claim not backed by retrieved evidence</span>",
+      "→ triggering additional retrieval + revision pass",
+      "<span class=\"ok\">✓ grounded — report returned after 2nd pass</span>"
+    ]
+  };
+  const agentLog = document.getElementById('agentLog');
+  document.querySelectorAll('.agent-demo .key-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const steps = agentTraces[btn.getAttribute('data-trace')];
+      agentLog.innerHTML = '';
+      steps.forEach((s, idx)=>{
+        setTimeout(()=>{
+          const line = document.createElement('span');
+          line.className = 'step';
+          line.innerHTML = s;
+          agentLog.appendChild(line);
+        }, idx * 420);
+      });
+    });
+  });
+
+
+  // data-quality demo
+  const dqFindings = {
+    corp:  '<span class="warn">→ RELIANCE (2020, 1:15) and BHARTIARTL (2019, 2021) rights issues missing from Yahoo\'s action data</span><br><span class="ok">✓ adjustments applied from NSE corporate-action records</span>',
+    quote: '<span class="warn">→ GOLDBEES quote basis off by 100× between bhavcopy and yfinance</span><br><span class="ok">✓ reconciled to a single basis before returns were computed</span>',
+    split: '<span class="ok">✓ split history validated exact against Yahoo for all 12 tickers</span>',
+    liq:   '<span class="ok">✓ LTGILTBEES passed: avg daily traded value ₹2.34 crore vs ₹1 crore threshold (2,315 observations)</span>',
+    gap:   '<span class="warn">→ dividend-methodology residual remains for RELIANCE, ITC and TATASTEEL</span><br><span class="ok">✓ documented in the validation report, not hidden</span>'
+  };
+  const dqLog = document.getElementById('dqLog');
+  document.querySelectorAll('.data-demo .key-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      dqLog.innerHTML = dqFindings[btn.getAttribute('data-dq')];
     });
   });
 
